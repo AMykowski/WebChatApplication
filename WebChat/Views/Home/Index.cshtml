@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Enter your username</h2>
+
+@using (Html.BeginForm("EnterLobby", "Home"))
+{
+    <div class="container">
+        <input type="text" name="username" />
+        <input type="submit" />
+    </div>
+}

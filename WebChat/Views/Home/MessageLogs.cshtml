@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebChat.Models.ChatMessage>
+
+@{
+    ViewData["Title"] = "MessageLogs";
+}
+
+<h2>Messages</h2>
+
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped col-md-8" style="text-align:center">
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Message</th>
+                            <th>Time</th>
+
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@Html.Raw(item.SenderUsername)</td>
+                                <td>@Html.Raw(item.ReceiverUsername)</td>
+                                <td>@Html.Raw(item.Message)</td>
+                                <td>@Html.Raw(item.Time)</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    }
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

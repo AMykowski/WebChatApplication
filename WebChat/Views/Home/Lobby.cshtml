@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebChat.Models.User>
+
+@{
+    ViewData["Title"] = "Lobby";
+}
+
+<h2>Messages</h2>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped col-md-8" style="text-align:center">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Start Chat</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@Html.Raw(item.Username)</td>
+
+                                <td>
+                                    <a href='@Url.Action("StartChat", "Home", new { receiverUsername = item.Username })' class="btn btn-primary">Start Chat</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    }
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
