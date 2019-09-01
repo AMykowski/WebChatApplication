@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using WebChat.Models;
 using WebChat.Repositories;
-using WebChat.ViewModels;
 
 namespace WebChat.Services
 {
