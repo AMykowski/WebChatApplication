@@ -15,6 +15,7 @@ namespace WebChat.Helpers
         /// <summary>
         /// Constructor: set up path, create one log file for each day in desktop directory
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         public Logger()
         {
             //Sets log datetime format, file name and path to desktop folder
@@ -35,9 +36,10 @@ namespace WebChat.Helpers
         /// <summary>
         /// Loggs sent messages in log file locally and inserts messages to Message table in db
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="startUser"></param>
-        /// <param name="endUser"></param>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="text"> The message </param>
+        /// <param name="startUser"> The sender</param>
+        /// <param name="endUser"> The receiver</param>
         public void Message(string text, string startUser, string endUser)
         {
             //Write to file
@@ -61,7 +63,8 @@ namespace WebChat.Helpers
         /// <summary>
         /// Loggs error messages to log file
         /// </summary>
-        /// <param name="text"></param>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="text"> The message</param>
         public void Error(string text)
         {
             WriteFormattedLog(LogType.ERROR, text);
@@ -70,7 +73,8 @@ namespace WebChat.Helpers
         /// <summary>
         /// Loggs info messages to log file
         /// </summary>
-        /// <param name="text"></param>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="text">The message</param>
         public void Info(string text)
         {
             WriteFormattedLog(LogType.INFO, text);
@@ -79,8 +83,9 @@ namespace WebChat.Helpers
         /// <summary>
         /// Writes log through StreamWriter
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="append"></param>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="text">The message</param>
+        /// <param name="append">The append specification</param>
         private void WriteLog(string text, bool append = true)
         {
             try
@@ -102,10 +107,11 @@ namespace WebChat.Helpers
         /// <summary>
         /// Creates format for message log 
         /// </summary>
-        /// <param name="logType"></param>
-        /// <param name="text"></param>
-        /// <param name="startUser"></param>
-        /// <param name="endUser"></param>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="logType">Log level</param>
+        /// <param name="text">The message</param>
+        /// <param name="startUser">The sender</param>
+        /// <param name="endUser">The receiver</param>
         private void WriteFormattedLog(LogType logType, string text, string startUser, string endUser)
         {
             string pretext;
@@ -125,8 +131,9 @@ namespace WebChat.Helpers
         /// <summary>
         /// Creates format for info and error logs
         /// </summary>
-        /// <param name="logType"></param>
-        /// <param name="text"></param>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="logType">Log level</param>
+        /// <param name="text">The message</param>
         private void WriteFormattedLog(LogType logType, string text)
         {
             string pretext;
@@ -150,6 +157,7 @@ namespace WebChat.Helpers
         /// <summary>
         /// Enums Log types
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         [System.Flags]
         private enum LogType
         {

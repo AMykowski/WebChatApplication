@@ -11,7 +11,8 @@ namespace WebChat.Controllers
         /// <summary>
         /// Opens Index page
         /// </summary>
-        /// <returns></returns>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <returns>Index view</returns>
         public ActionResult Index()
         {
             return View();
@@ -20,7 +21,8 @@ namespace WebChat.Controllers
         /// <summary>
         /// Opens the MessageLogs page and displays all messages in table
         /// </summary>
-        /// <returns></returns>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <returns>MessageLog View with list of messages</returns>
         public ActionResult MessageLogs()
         {
 
@@ -32,7 +34,8 @@ namespace WebChat.Controllers
         /// <summary>
         /// Opens Contact page
         /// </summary>
-        /// <returns></returns>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <returns>Contact View</returns>
         public ActionResult Contact()
         {
 
@@ -42,8 +45,9 @@ namespace WebChat.Controllers
         /// <summary>
         /// Opens Lobby page, saves the currentUsername in session, calls the addUser method and displays Active users
         /// </summary>
-        /// <param name="username"></param>
-        /// <returns></returns>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="username">Current user username</param>
+        /// <returns>Lobby View with list of active users</returns>
         [HttpPost]
         public ActionResult EnterLobby(string username)
         {
@@ -62,8 +66,9 @@ namespace WebChat.Controllers
         /// <summary>
         /// Opens the Chat page, sets up ConversationViewModel which stores both users in active chat keeping their roles (sender, receiver) and their previous conversation
         /// </summary>
-        /// <param name="receiverUsername"></param>
-        /// <returns></returns>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="receiverUsername">The receiver</param>
+        /// <returns>Chat view with conversation containing previous chat entries</returns>
         [HttpGet]
         public ActionResult StartChat(string receiverUsername)
         {

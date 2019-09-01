@@ -10,6 +10,7 @@ namespace WebChat.Repositories
         /// <summary>
         /// Sets up the context
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         public SimpleChatDbEntities DbContext
         {
             get
@@ -21,6 +22,7 @@ namespace WebChat.Repositories
         /// <summary>
         /// Retrieves the Database
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         public Database Database
         {
             get { return context.Database; }
@@ -30,6 +32,7 @@ namespace WebChat.Repositories
         /// <summary>
         /// Constructor: sets context configuration
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         public DbConnector()
         {
             context = new SimpleChatDbEntities();
@@ -46,6 +49,7 @@ namespace WebChat.Repositories
         /// <summary>
         /// Sets up User repository
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         public GenericRepository<User> UserRepository
         {
             get
@@ -61,6 +65,7 @@ namespace WebChat.Repositories
         /// <summary>
         /// Sets up ChatMessage repository
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         public GenericRepository<ChatMessage> ChatMessageRepository
         {
             get
@@ -76,37 +81,15 @@ namespace WebChat.Repositories
 
         #endregion
 
-        #region Save /*& Dispose*/
-
         /// <summary>
         /// Saves changes made to the database
         /// </summary>
+        ///  <remarks>Artur 01.09.2019</remarks>
         public void Save()
         {
             context.SaveChanges();
         }
 
-        //private bool disposed = false;
-
-        //protected virtual void Dispose(bool disposing)
-        //{
-        //    if (!this.disposed)
-        //    {
-        //        if (disposing)
-        //        {
-        //            context.Dispose();
-        //        }
-        //    }
-        //    this.disposed = true;
-        //}
-
-        //public void Dispose()
-        //{
-        //    Dispose(true);
-        //    GC.SuppressFinalize(this);
-        //}
-
-
-        #endregion
+        
     }
 }

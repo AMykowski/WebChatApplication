@@ -11,7 +11,8 @@ namespace WebChat.Services
         /// <summary>
         /// Gets all the active users to display in the lobby
         /// </summary>
-        /// <returns></returns>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <returns>List of Active Users</returns>
         public static List<User> GetActiveUsers()
         {
             List<User> users = new List<User>();
@@ -34,8 +35,9 @@ namespace WebChat.Services
         /// <summary>
         /// Adds a new user to the user table if the given username isn't already taken
         /// </summary>
-        /// <param name="username"></param>
-        /// <returns></returns>
+        /// <remarks>Artur 01.09.2019</remarks>
+        /// <param name="username">The currenet user</param>
+        /// <returns>If operation succeeded or no</returns>
         public static bool AddUser(string username)
         {
             try
@@ -73,7 +75,8 @@ namespace WebChat.Services
         /// <summary>
         /// Gets the messages to display in the MessageLog
         /// </summary>
-        /// <returns></returns>
+        /// <remarks>Artur 01.09.2019</remarks>
+        /// <returns>List of messages</returns>
         public static List<ChatMessage> GetMessages()
         {
 
@@ -94,9 +97,9 @@ namespace WebChat.Services
         /// <summary>
         /// Gets all the previous messages for two conversation participants
         /// </summary>
-        /// <param name="currentUser"></param>
-        /// <param name="receiverUser"></param>
-        /// <returns></returns>
+        /// <param name="currentUser">The Sender</param>
+        /// <param name="receiverUser">The Receiver</param>
+        /// <returns>List of precious chat messages for conversation</returns>
         public static List<ChatMessage> GetOldConversations(string currentUser, string receiverUser)
         {
             List<ChatMessage> oldMessages = new List<ChatMessage>();

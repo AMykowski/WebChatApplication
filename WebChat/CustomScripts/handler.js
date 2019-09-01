@@ -1,4 +1,5 @@
 ﻿//SignalR handler functions to establish a connection, get and append usernames and messages
+//<remarks>Artur 01.09.2019</remarks>
 $(function () {
     
     var chat = $.connection.chatHub;

@@ -16,9 +16,10 @@ namespace WebChat
         /// <summary>
         /// Gets the message and usernames of chat participants and adds message to page using SignalR
         /// </summary>
-        /// <param name="currentUser"></param>
-        /// <param name="receiverUser"></param>
-        /// <param name="message"></param>
+        ///  <remarks>Artur 01.09.2019</remarks>
+        /// <param name="currentUser">The Sender</param>
+        /// <param name="receiverUser"> The Receiver</param>
+        /// <param name="message">The message</param>
         public void Send(string currentUser, string receiverUser, string message)
         {
 
